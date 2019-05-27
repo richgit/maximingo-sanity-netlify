@@ -90,7 +90,7 @@ const IndexPage = props => {
         <h1 hidden>Welcome to {site.title}</h1>
         {projectNodes && (
           <ProjectPreviewGrid
-            title='Latest projects'
+            title='Interesting articles'
             nodes={projectNodes}
             browseMoreHref='/archive/'
           />
