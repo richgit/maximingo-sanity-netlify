@@ -35,7 +35,7 @@ export default {
         ],
         data: [
           {
-            title: 'GitHub repo',
+            title: 'GitHub repo 123',
             value: 'https://github.com/richgit/maximingo-sanity-netlify',
             category: 'Code'
           },
