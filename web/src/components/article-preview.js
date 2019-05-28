@@ -9,7 +9,7 @@ import {responsiveTitle3} from './typography.module.css'
 
 function ArticlePreview (props) {
   return (
-    <Link className={styles.root} to={`/`}>
+    <a className={styles.root} href={props.articleUrl}>
       <div className={styles.leadMediaThumb}>
         {props.mainImage && props.mainImage.asset && (
           <img
@@ -22,12 +22,12 @@ function ArticlePreview (props) {
         )}
       </div>
       <h3 className={cn(responsiveTitle3, styles.title)}>{props.title}</h3>
-      {props._rawExcerpt && (
+      {props.description && (
         <div className={styles.excerpt}>
-          <BlockText blocks={props._rawExcerpt} />
+          <BlockText blocks={props.description} />
         </div>
       )}
-    </Link>
+    </a>
   )
 }
 

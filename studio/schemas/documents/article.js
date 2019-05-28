@@ -34,9 +34,9 @@ export default {
       of: [{type: 'reference', to: {type: 'category'}}]
     },
     {
-      name: 'body',
-      title: 'Body',
-      type: 'projectPortableText'
+      name: 'description',
+      title: 'Decription',
+      type: 'text'
     },
   ],
   preview: {
