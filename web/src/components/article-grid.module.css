@@ -3,6 +3,7 @@
 
 .root {
   margin: 2em 0 4em;
+  max-width: 300px;
 }
 
 .headline {
@@ -18,17 +19,20 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 2em;
+  display: flex;
+  flex-direction: column;
 
-  @media (--media-min-small) {
-    grid-template-columns: 1fr 1fr;
-  }
+/*display: grid;*/
+  /*grid-template-columns: 1fr;*/
+  /*grid-gap: 2em;*/
 
-  @media (--media-min-medium) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+  /*@media (--media-min-small) {*/
+  /*  grid-template-columns: 1fr 1fr;*/
+  /*}*/
+  /**/
+  /*@media (--media-min-medium) {*/
+  /*  grid-template-columns: 1fr 1fr 1fr;*/
+  /*}*/
 }
 
 .browseMoreNav {

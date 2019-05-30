@@ -12,13 +12,13 @@ function ArticlePreview (props) {
   return (
     <a className={styles.root} href={props.articleUrl}>
       <div className={styles.leadMediaThumb}>
-        {props.mainImage && props.mainImage.asset && (
+        {props.image && props.image.asset && (
           <img
-            src={imageUrlFor(buildImageObj(props.mainImage))
-              .width(600)
-              .height(Math.floor((9 / 16) * 600))
+            src={imageUrlFor(buildImageObj(props.image))
+              .width(200)
+              .height(Math.floor((9 / 16) * 200))
               .url()}
-            alt={props.mainImage.alt}
+            alt={props.title}
           />
         )}
       </div>

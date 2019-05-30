@@ -26,7 +26,7 @@ export const query = graphql`
       edges {
         node {
           id
-          mainImage {
+          image {
             crop {
               _key
               _type
@@ -46,7 +46,6 @@ export const query = graphql`
             asset {
               _id
             }
-            alt
           }
           title
           description
@@ -138,7 +137,6 @@ const IndexPage = props => {
           {/*    browseMoreHref='/archive/'*/}
           {/*  />*/}
           {/*)}*/}
-          <div className="float-md-right">
             {articleNodes && (
               <ArticlePreviewGrid
                 title='Latest articles'
@@ -146,7 +144,6 @@ const IndexPage = props => {
                 browseMoreHref='/archive/'
               />
             )}
-          </div>
         </div>
       </Container>
     </Layout>

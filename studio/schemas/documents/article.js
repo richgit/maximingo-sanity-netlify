@@ -23,9 +23,12 @@ export default {
       type: 'datetime'
     },
     {
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'figure'
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true
+      },
     },
     {
       name: 'categories',
@@ -43,9 +46,9 @@ export default {
     select: {
       title: 'title',
       publishedAt: 'publishedAt',
-      media: 'mainImage'
+      media: 'image'
     },
-    prepare ({title = 'No title', publishedAt, media}) {
+    prepare({title = 'No title', publishedAt, media}) {
       const dateSegment = format(publishedAt, 'DD/MM/YYYY')
       return {
         title,
