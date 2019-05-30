@@ -1,10 +1,8 @@
-import {Link} from 'gatsby'
 import React from 'react'
-import {cn, buildImageObj} from '../lib/helpers'
+import {buildImageObj, cn} from '../lib/helpers'
 import {imageUrlFor} from '../lib/image-url'
-import BlockText from './block-text'
 
-import styles from './project-preview.module.css'
+import styles from './article-preview-grid.module.css'
 import {responsiveTitle3} from './typography.module.css'
 
 function ArticlePreview (props) {
@@ -16,7 +14,8 @@ function ArticlePreview (props) {
           <img
             src={imageUrlFor(buildImageObj(props.image))
               .width(200)
-              .height(Math.floor((9 / 16) * 200))
+              .height(400)
+              // .height(Math.floor((9 / 16) * 200))
               .url()}
             alt={props.title}
           />

@@ -1,7 +1,7 @@
 import {Link} from 'gatsby'
 import React from 'react'
 
-import styles from './article-grid.module.css'
+import styles from './article-preview-grid.module.css'
 import ArticlePreview from "./article-preview";
 
 function articlePreviewGrid (props) {
