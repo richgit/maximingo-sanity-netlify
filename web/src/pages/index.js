@@ -101,7 +101,7 @@ const IndexPage = props => {
   if (errors) {
     return (
       <Layout>
-        <GraphQLErrorList errors={errors} />
+        <GraphQLErrorList errors={errors}/>
       </Layout>
     )
   }
@@ -127,23 +127,27 @@ const IndexPage = props => {
 
   return (
     <Layout>
-      <SEO title={site.title} description={site.description} keywords={site.keywords} />
+      <SEO title={site.title} description={site.description} keywords={site.keywords}/>
       <Container>
         <h1 hidden>{site.title}</h1>
-        {projectNodes && (
-          <ProjectPreviewGrid
-            title='Latest projects'
-            nodes={projectNodes}
-            browseMoreHref='/archive/'
-          />
-        )}
-        {articleNodes && (
-          <ArticlePreviewGrid
-            title='Latest articles'
-            nodes={articleNodes}
-            browseMoreHref='/archive/'
-          />
-        )}
+        <div className='d-flex justify-content-end'>
+          {/*{projectNodes && (*/}
+          {/*  <ProjectPreviewGrid*/}
+          {/*    title='Latest projects'*/}
+          {/*    nodes={projectNodes}*/}
+          {/*    browseMoreHref='/archive/'*/}
+          {/*  />*/}
+          {/*)}*/}
+          <div className="float-md-right">
+            {articleNodes && (
+              <ArticlePreviewGrid
+                title='Latest articles'
+                nodes={articleNodes}
+                browseMoreHref='/archive/'
+              />
+            )}
+          </div>
+        </div>
       </Container>
     </Layout>
   )

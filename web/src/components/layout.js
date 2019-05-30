@@ -6,10 +6,6 @@ import styles from './layout.module.css'
 
 const Layout = ({children, onHideNav, onShowNav, showNav, siteTitle}) => (
   <>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"/>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
-
     <Headroom>
       <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} />
     </Headroom>    <div className={styles.content}>{children}</div>

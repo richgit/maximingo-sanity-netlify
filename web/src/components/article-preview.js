@@ -8,6 +8,7 @@ import styles from './project-preview.module.css'
 import {responsiveTitle3} from './typography.module.css'
 
 function ArticlePreview (props) {
+  console.log('props', props)
   return (
     <a className={styles.root} href={props.articleUrl}>
       <div className={styles.leadMediaThumb}>
@@ -24,7 +25,7 @@ function ArticlePreview (props) {
       <h3 className={cn(responsiveTitle3, styles.title)}>{props.title}</h3>
       {props.description && (
         <div className={styles.excerpt}>
-          <BlockText blocks={props.description} />
+          <div>{props.description}</div>
         </div>
       )}
     </a>
