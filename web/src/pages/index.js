@@ -7,6 +7,7 @@ import ArticlePreviewGrid from '../components/article-preview-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Image from 'gatsby-image';
+import {responsiveTitle1} from "../components/typography.module.css";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -138,7 +139,7 @@ const IndexPage = props => {
               fluid={site.homeImage.asset.fluid}
               alt={site.title}
             />
-            <h1 className="display-4">{site.title}</h1>
+            <h1 className={responsiveTitle1}>{site.title}</h1>
             <p className="lead">{site.description}</p>
           </div>
         </div>
