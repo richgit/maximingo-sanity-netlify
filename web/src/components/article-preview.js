@@ -6,7 +6,7 @@ import styles from './article-preview-grid.module.css'
 import {responsiveTitle3} from './typography.module.css'
 
 function ArticlePreview (props) {
-  console.log('props', props)
+  console.log('props', props);
   return (
     <a className={styles.root} href={props.articleUrl}>
       <div className="card mb-3 bg-dark">

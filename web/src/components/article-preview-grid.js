@@ -14,7 +14,6 @@ function articlePreviewGrid (props) {
               <ArticlePreview {...node} />
             </div>
           ))}
-      )}
     </div>
   )
 }
