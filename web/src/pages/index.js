@@ -6,6 +6,7 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import ArticlePreviewGrid from '../components/article-preview-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+import Image from 'gatsby-image';
 
 export const query = graphql`
   query IndexPageQuery {
@@ -13,7 +14,13 @@ export const query = graphql`
       title
       description
       keywords
-    }
+      homeImage {
+        asset {
+          fluid {
+            ...GatsbySanityImageFluid
+          }
+        }
+      }    }
     articles: allSanityArticle(
       limit: 6
       sort: {fields: [publishedAt], order: DESC}
@@ -127,10 +134,12 @@ const IndexPage = props => {
 
         <div className="jumbotron jumbotron-fluid bg-dark">
           <div className="container">
-            <img src="http://www.maximingo.com/wp-content/uploads/2014/09/logo.png" alt="maximingo"/>
-            <h1 className="display-4">Fluid jumbotron</h1>
-            <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its
-              parent.</p>
+            <Image
+              fluid={site.homeImage.asset.fluid}
+              alt={site.title}
+            />
+            <h1 className="display-4">{site.title}</h1>
+            <p className="lead">{site.description}</p>
           </div>
         </div>
         <div className='d-flex justify-content-end'>

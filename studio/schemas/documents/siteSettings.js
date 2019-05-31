@@ -25,6 +25,14 @@ export default {
       }
     },
     {
+      name: 'homeImage',
+      title: 'Home Page Image',
+      type: 'image',
+      options: {
+        hotspot: true
+      },
+    },
+    {
       name: 'author',
       type: 'reference',
       description: 'Publish an author and set a reference to them here.',
