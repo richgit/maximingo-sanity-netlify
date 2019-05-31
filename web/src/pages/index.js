@@ -1,13 +1,8 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import {
-  mapEdgesToNodes,
-  filterOutDocsWithoutSlugs,
-  filterOutDocsPublishedInTheFuture
-} from '../lib/helpers'
+import {filterOutDocsPublishedInTheFuture, filterOutDocsWithoutSlugs, mapEdgesToNodes} from '../lib/helpers'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
-import ProjectPreviewGrid from '../components/project-preview-grid'
 import ArticlePreviewGrid from '../components/article-preview-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
@@ -129,6 +124,15 @@ const IndexPage = props => {
       <SEO title={site.title} description={site.description} keywords={site.keywords}/>
       <Container>
         <h1 hidden>{site.title}</h1>
+
+        <div className="jumbotron jumbotron-fluid bg-dark">
+          <div className="container">
+            <img src="http://www.maximingo.com/wp-content/uploads/2014/09/logo.png" alt="maximingo"/>
+            <h1 className="display-4">Fluid jumbotron</h1>
+            <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its
+              parent.</p>
+          </div>
+        </div>
         <div className='d-flex justify-content-end'>
           {/*{projectNodes && (*/}
           {/*  <ProjectPreviewGrid*/}
@@ -137,6 +141,10 @@ const IndexPage = props => {
           {/*    browseMoreHref='/archive/'*/}
           {/*  />*/}
           {/*)}*/}
+
+
+
+
             {articleNodes && (
               <ArticlePreviewGrid
                 title='Latest articles'

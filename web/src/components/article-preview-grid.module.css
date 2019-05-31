@@ -3,6 +3,8 @@
 
 .root {
   margin: 2em 0 4em;
+  max-width: 400px;
+  background: var(--color-black);
 }
 
 .headline {
