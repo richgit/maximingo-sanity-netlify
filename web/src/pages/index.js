@@ -1,6 +1,11 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import {filterOutDocsPublishedInTheFuture, filterOutDocsWithoutSlugs, mapEdgesToNodes} from '../lib/helpers'
+import {
+  buildImageObj,
+  filterOutDocsPublishedInTheFuture,
+  filterOutDocsWithoutSlugs,
+  mapEdgesToNodes
+} from '../lib/helpers'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import ArticlePreviewGrid from '../components/article-preview-grid'
@@ -8,6 +13,7 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Image from 'gatsby-image';
 import {responsiveTitle1} from "../components/typography.module.css";
+import {imageUrlFor} from "../lib/image-url";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -17,9 +23,7 @@ export const query = graphql`
       keywords
       homeImage {
         asset {
-          fluid {
-            ...GatsbySanityImageFluid
-          }
+          url
         }
       }    }
     articles: allSanityArticle(
@@ -135,9 +139,10 @@ const IndexPage = props => {
 
         <div className="jumbotron jumbotron-fluid bg-dark">
           <div className="container">
-            <Image
-              fluid={site.homeImage.asset.fluid}
+            <img
+              src={site.homeImage.asset.url}
               alt={site.title}
+              width="100%"
             />
             <h1 className={responsiveTitle1}>{site.title}</h1>
             <p className="lead">{site.description}</p>
