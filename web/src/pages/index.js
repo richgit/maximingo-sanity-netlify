@@ -1,19 +1,12 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import {
-  buildImageObj,
-  filterOutDocsPublishedInTheFuture,
-  filterOutDocsWithoutSlugs,
-  mapEdgesToNodes
-} from '../lib/helpers'
+import {filterOutDocsPublishedInTheFuture, filterOutDocsWithoutSlugs, mapEdgesToNodes} from '../lib/helpers'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import ArticlePreviewGrid from '../components/article-preview-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import Image from 'gatsby-image';
 import {responsiveTitle1} from "../components/typography.module.css";
-import {imageUrlFor} from "../lib/image-url";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -27,7 +20,7 @@ export const query = graphql`
         }
       }    }
     articles: allSanityArticle(
-      limit: 6
+      limit: 20
       sort: {fields: [publishedAt], order: DESC}
     ) {
       edges {
@@ -57,6 +50,10 @@ export const query = graphql`
           title
           description
           articleUrl
+          publishedAt
+          categories {
+            title
+          }
         }
       }
      }

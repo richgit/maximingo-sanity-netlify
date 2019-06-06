@@ -10,7 +10,7 @@ function articlePreviewGrid (props) {
       {props.title && <h2 className={styles.headline}>{props.title}</h2>}
         {props.nodes &&
           props.nodes.map(node => (
-            <div key={node.id}>
+            <div className={styles.box} key={node.id}>
               <ArticlePreview {...node} />
             </div>
           ))}

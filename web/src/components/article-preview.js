@@ -4,13 +4,14 @@ import {imageUrlFor} from '../lib/image-url'
 
 import styles from './article-preview-grid.module.css'
 import {responsiveTitle3} from './typography.module.css'
+import {differenceInDays, distanceInWords, format} from "date-fns";
 
 function ArticlePreview (props) {
   console.log('props', props);
   return (
     <a className={styles.root} href={props.articleUrl}>
-      <div className="card mb-3 bg-dark">
-        <div className="row no-gutters">
+      <div className="card bg-dark">
+        <div className="row ">
           <div className="col-md-4">
             <img
               src={imageUrlFor(buildImageObj(props.image))
@@ -20,19 +21,34 @@ function ArticlePreview (props) {
                 .url()}
               alt={props.title}
             />
+
+            <p className="card-text mt-2">
+              <small className="text-muted">
+                {differenceInDays(new Date(props.publishedAt), new Date()) > 3
+                  ? distanceInWords(new Date(props.publishedAt), new Date())
+                  : format(new Date(props.publishedAt), 'MMMM Do YYYY')}
+              </small>
+            </p>
+
+            {props.categories &&
+            props.categories.map(category => (
+              <p className="ppp" key={category.id}>
+                <span className="badge badge-light">{category.title}</span>
+              </p>
+            ))}
+
           </div>
           <div className="col-md-8">
-            <div className="card-body">
-              <h5 className={cn(responsiveTitle3, styles.title)}>{props.title}</h5>
+            <div className="card-block">
+
+              <h4 className="card-title"><div className={cn(responsiveTitle3, styles.title)}>{props.title}</div></h4>
               <p className="card-text">{props.description}</p>
-              <p className="card-text">
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </p>
+
             </div>
           </div>
+
         </div>
       </div>
-
     </a>
   )
 }
