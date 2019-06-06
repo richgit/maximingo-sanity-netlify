@@ -19,7 +19,7 @@
 
 .headline {
   font-size: var(--font-large-size);
-  line-height: var(--font-large-line-heighht);
+  line-height: var(--font-large-line-height);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
