@@ -7,6 +7,7 @@ import ArticlePreviewGrid from '../components/article-preview-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import {responsiveTitle1} from "../components/typography.module.css";
+import styles from "../components/article-preview-grid.module.css";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -145,26 +146,45 @@ const IndexPage = props => {
             <p className="lead">{site.description}</p>
           </div>
         </div>
-        <div className='d-flex justify-content-end'>
-          {/*{projectNodes && (*/}
-          {/*  <ProjectPreviewGrid*/}
-          {/*    title='Latest projects'*/}
-          {/*    nodes={projectNodes}*/}
-          {/*    browseMoreHref='/archive/'*/}
-          {/*  />*/}
-          {/*)}*/}
-
-
-
-
+        <div id='articles' className='d-flex justify-content-end'>
             {articleNodes && (
               <ArticlePreviewGrid
                 title='Latest articles'
                 nodes={articleNodes}
-                browseMoreHref='/archive/'
               />
             )}
         </div>
+
+        <div id='contact' className="container">
+
+          <h3 className={styles.headline}>Contact us</h3><br/>
+
+          <div className="row">
+            <div className="col-md-8">
+              <form name="contact" method="POST" data-netlify="true">
+                <input className="form-control" name="name" placeholder="Name..."/><br/>
+                <input className="form-control" name="phone" placeholder="Phone..."/><br/>
+                <input className="form-control" name="email" placeholder="E-mail..."/><br/>
+                <textarea className="form-control" name="text" placeholder="How can we help you?"></textarea><br/>
+                <input className="btn btn-primary" type="submit" value="Send"/><br/><br/>
+              </form>
+            </div>
+            <div className="col-md-4">
+              Maximingo Limited <br/>
+              94 Tender Road<br/>
+              Dairy Flat<br/>
+              Auckland<br/>
+              Phone: +64 (0)22 608 6513<br/>
+              E-mail: <a href="mailto:info@maximingo.com">info@maximingo.com</a><br/>
+
+
+            </div>
+          </div>
+
+        </div>
+
+
+
       </Container>
     </Layout>
   )

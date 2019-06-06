@@ -18,8 +18,8 @@ a {
 }
 
 a:hover {
-  color: var(--color-white);
-  text-decoration: none;
+  color: var(--color-white) !important;
+  text-decoration: none !important;
 }
 
 .card {

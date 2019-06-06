@@ -16,10 +16,13 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
         <Icon symbol='hamburger' />
       </button>
 
-      <nav className={cn(styles.nav, showNav && styles.showNav)}>
+      <nav id='scrollable-navbar' className={cn(styles.nav, showNav && styles.showNav)}>
         <ul>
           <li>
-            <Link to='/archive/'>Archive</Link>
+            <a href='#articles'>Articles</a>
+          </li>
+          <li>
+            <a href='#contact'>Contact</a>
           </li>
         </ul>
       </nav>

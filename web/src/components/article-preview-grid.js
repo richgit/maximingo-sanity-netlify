@@ -21,7 +21,6 @@ function articlePreviewGrid (props) {
 articlePreviewGrid.defaultProps = {
   title: '',
   nodes: [],
-  browseMoreHref: ''
 }
 
 export default articlePreviewGrid
