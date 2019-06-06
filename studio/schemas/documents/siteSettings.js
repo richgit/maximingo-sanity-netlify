@@ -25,6 +25,14 @@ export default {
       }
     },
     {
+      name: 'navImage',
+      title: 'Navbar Image',
+      type: 'image',
+      options: {
+        hotspot: true
+      },
+    },
+    {
       name: 'homeImage',
       title: 'Home Page Image',
       type: 'image',
