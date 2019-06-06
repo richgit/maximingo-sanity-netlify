@@ -1,12 +1,12 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import {filterOutDocsPublishedInTheFuture, filterOutDocsWithoutSlugs, mapEdgesToNodes} from '../lib/helpers'
+import {cn, filterOutDocsPublishedInTheFuture, filterOutDocsWithoutSlugs, mapEdgesToNodes} from '../lib/helpers'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import ArticlePreviewGrid from '../components/article-preview-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import {responsiveTitle1} from "../components/typography.module.css";
+import {responsiveTitle3} from "../components/typography.module.css";
 import styles from "../components/article-preview-grid.module.css";
 
 export const query = graphql`
@@ -19,7 +19,8 @@ export const query = graphql`
         asset {
           url
         }
-      }    }
+      }
+    }
     articles: allSanityArticle(
       limit: 20
       sort: {fields: [publishedAt], order: DESC}
@@ -137,13 +138,12 @@ const IndexPage = props => {
 
         <div className="jumbotron jumbotron-fluid bg-dark">
           <div className="container">
-            <img
+            <img className="py-4"
               src={site.homeImage.asset.url}
               alt={site.title}
               width="100%"
             />
-            <h1 className={responsiveTitle1}>{site.title}</h1>
-            <p className="lead">{site.description}</p>
+            <div className={cn(responsiveTitle3, styles.description)}>{site.description}</div>
           </div>
         </div>
         <div id='articles' className='d-flex justify-content-end'>
