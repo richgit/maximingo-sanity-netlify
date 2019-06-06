@@ -12,10 +12,18 @@ function ArticlePreview (props) {
     <a className={styles.root} href={props.articleUrl}>
       <div className="card bg-dark">
         <div className="row ">
-          <div className="col-md-4">
-            <img
+          <div className="col-12 col-sm-4">
+            <img className="d-none d-sm-block"
               src={imageUrlFor(buildImageObj(props.image))
                 .width(100)
+                .height(130)
+                // .height(Math.floor((9 / 16) * 200))
+                .url()}
+              alt={props.title}
+            />
+            <img className="d-block d-sm-none"
+              src={imageUrlFor(buildImageObj(props.image))
+                .width(400)
                 .height(130)
                 // .height(Math.floor((9 / 16) * 200))
                 .url()}
@@ -32,13 +40,13 @@ function ArticlePreview (props) {
 
             {props.categories &&
             props.categories.map(category => (
-              <p className="ppp" key={category.id}>
+              <p key={category.id}>
                 <span className="badge badge-light">{category.title}</span>
               </p>
             ))}
 
           </div>
-          <div className="col-md-8">
+          <div className="col-sm-8">
             <div className="card-block">
 
               <h4 className="card-title"><div className={cn(responsiveTitle3, styles.title)}>{props.title}</div></h4>
