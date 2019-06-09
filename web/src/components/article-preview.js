@@ -7,7 +7,6 @@ import {responsiveTitle3} from './typography.module.css'
 import {differenceInDays, distanceInWords, format} from "date-fns";
 
 function ArticlePreview(props) {
-  console.log('props', props);
   return (
     <a className={styles.root} href={props.articleUrl}>
       <div className="card bg-dark">
