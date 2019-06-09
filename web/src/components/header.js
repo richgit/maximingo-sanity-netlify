@@ -9,11 +9,6 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle, navbarImage}) => (
   <div className={styles.root}>
     <div className={styles.wrapper}>
       <div className={styles.branding}>
-        <img
-          src={navbarImage.asset.url}
-          alt={siteTitle}
-          height='35px'
-        />
       </div>
 
       <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
