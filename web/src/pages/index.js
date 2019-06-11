@@ -164,7 +164,7 @@ const IndexPage = props => {
               <form name="contact" method="POST" data-netlify="true">
                 <input className="form-control" name="name" placeholder="Name..." aria-label="Name" /><br/>
                 <input className="form-control" name="phone" placeholder="Phone..." aria-label="Phone" /><br/>
-                <input required className="form-control" name="email" placeholder="E-mail..." aria-label="Email" aria-required="true" /><br/>
+                <input required type="email" className="form-control" name="email" placeholder="E-mail..." aria-label="Email" aria-required="true" /><br/>
                 <textarea className="form-control" name="text" placeholder="How can we help you?" aria-label="How can we help?" /><br/>
                 <input className="btn btn-secondary" type="submit" value="Send" aria-label="Send"/><br/><br/>
               </form>
@@ -175,7 +175,7 @@ const IndexPage = props => {
               Dairy Flat<br/>
               Auckland<br/>
               Phone: +64 (0)22 608 6513<br/>
-              E-mail: <a href="mailto:info@maximingo.com">info@maximingo.com</a><br/>
+              E-mail: <a href="mailto:info@maximingo.com" rel="noopener">info@maximingo.com</a><br/>
 
 
             </div>
