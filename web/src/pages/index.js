@@ -166,7 +166,7 @@ const IndexPage = props => {
                 <input className="form-control" name="phone" placeholder="Phone..."/><br/>
                 <input required className="form-control" name="email" placeholder="E-mail..."/><br/>
                 <textarea className="form-control" name="text" placeholder="How can we help you?"></textarea><br/>
-                <input className="btn btn-secondary" type="submit" value="Send"/><br/><br/>
+                <input className="btn btn-secondary" type="submit" value="Send" aria-label="Send"/><br/><br/>
               </form>
             </div>
             <div className="col-md-4">
