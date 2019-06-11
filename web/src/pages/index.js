@@ -149,7 +149,7 @@ const IndexPage = props => {
         <div id='articles' className='d-flex justify-content-end'>
             {articleNodes && (
               <ArticlePreviewGrid
-                title='Latest articles'
+                title=' '
                 nodes={articleNodes}
               />
             )}
