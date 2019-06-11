@@ -36,7 +36,7 @@ function LayoutContainer (props) {
           <Layout
             {...props}
             showNav={showNav}
-            navbarImage={data.site.navImage}
+            navImage={data.site.navImage}
             siteTitle={data.site.title}
             onHideNav={handleHideNav}
             onShowNav={handleShowNav}

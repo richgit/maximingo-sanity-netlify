@@ -3,7 +3,7 @@ import {buildImageObj, cn} from '../lib/helpers'
 import {imageUrlFor} from '../lib/image-url'
 
 import styles from './article-preview-grid.module.css'
-import {responsiveTitle3} from './typography.module.css'
+import {responsiveTitle4} from './typography.module.css'
 import {differenceInDays, distanceInWords, format} from "date-fns";
 
 function ArticlePreview(props) {
@@ -52,7 +52,7 @@ function ArticlePreview(props) {
             <div className="card-block">
 
               <h4 className="card-title">
-                <div className={cn(responsiveTitle3, styles.title)}>{props.title}</div>
+                <div className={cn(responsiveTitle4, styles.title)}>{props.title}</div>
               </h4>
               <p className="card-text">{props.description}</p>
 
