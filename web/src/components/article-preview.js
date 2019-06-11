@@ -32,7 +32,7 @@ function ArticlePreview(props) {
 
             <div className='d-flex flex-row flex-sm-column justify-content-between mt-2'>
               <p className="card-text">
-                <small className="text-muted">
+                <small className="text-light">
                   {differenceInDays(new Date(props.publishedAt), new Date()) > 3
                     ? distanceInWords(new Date(props.publishedAt), new Date())
                     : format(new Date(props.publishedAt), 'MMMM Do YYYY')}

@@ -162,10 +162,10 @@ const IndexPage = props => {
           <div className="row">
             <div className="col-md-8">
               <form name="contact" method="POST" data-netlify="true">
-                <input className="form-control" name="name" placeholder="Name..."/><br/>
-                <input className="form-control" name="phone" placeholder="Phone..."/><br/>
-                <input required className="form-control" name="email" placeholder="E-mail..."/><br/>
-                <textarea className="form-control" name="text" placeholder="How can we help you?"></textarea><br/>
+                <input className="form-control" name="name" placeholder="Name..." aria-label="Name" /><br/>
+                <input className="form-control" name="phone" placeholder="Phone..." aria-label="Phone" /><br/>
+                <input required className="form-control" name="email" placeholder="E-mail..." aria-label="Email" aria-required="true" /><br/>
+                <textarea className="form-control" name="text" placeholder="How can we help you?" aria-label="How can we help?" /><br/>
                 <input className="btn btn-secondary" type="submit" value="Send" aria-label="Send"/><br/><br/>
               </form>
             </div>
