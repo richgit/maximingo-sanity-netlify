@@ -1,15 +1,13 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import {cn, filterOutDocsPublishedInTheFuture, filterOutDocsWithoutSlugs, mapEdgesToNodes} from '../lib/helpers'
+import {filterOutDocsPublishedInTheFuture, filterOutDocsWithoutSlugs, mapEdgesToNodes} from '../lib/helpers'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import ArticlePreviewGrid from '../components/article-preview-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import {responsiveTitle3} from "../components/typography.module.css";
 import styles from "../components/article-preview-grid.module.css";
 import Zoom from 'react-reveal/Zoom';
-import {Spring} from "react-spring";
 import JumboBlock from "../components/jumbo-block";
 
 export const query = graphql`
@@ -148,15 +146,6 @@ const IndexPage = props => {
 
              <JumboBlock image={site.homeImage} title={site.title} description={site.description}/>
 
-
-              {/*<Zoom>*/}
-              {/*  <img className="py-4"*/}
-              {/*       src={site.homeImage.asset.url}*/}
-              {/*       alt={site.title}*/}
-              {/*       width="100%"*/}
-              {/*  />*/}
-              {/*  <div className={cn(responsiveTitle3, styles.description)}>{site.description}</div>*/}
-              {/*</Zoom>*/}
             </div>
           </div>
         </div>
