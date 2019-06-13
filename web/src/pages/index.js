@@ -9,6 +9,8 @@ import Layout from '../containers/layout'
 import {responsiveTitle3} from "../components/typography.module.css";
 import styles from "../components/article-preview-grid.module.css";
 import Zoom from 'react-reveal/Zoom';
+import {Spring} from "react-spring";
+import JumboBlock from "../components/jumbo-block";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -143,13 +145,17 @@ const IndexPage = props => {
           <div className="jumbotron jumbotron-fluid bg-dark vh-100">
 
             <div className={styles.jumbo}>
+
+             <JumboBlock image={site.homeImage} title={site.title} description={site.description}/>
+
+
               {/*<Zoom>*/}
-                <img className="py-4"
-                     src={site.homeImage.asset.url}
-                     alt={site.title}
-                     width="100%"
-                />
-                <div className={cn(responsiveTitle3, styles.description)}>{site.description}</div>
+              {/*  <img className="py-4"*/}
+              {/*       src={site.homeImage.asset.url}*/}
+              {/*       alt={site.title}*/}
+              {/*       width="100%"*/}
+              {/*  />*/}
+              {/*  <div className={cn(responsiveTitle3, styles.description)}>{site.description}</div>*/}
               {/*</Zoom>*/}
             </div>
           </div>
