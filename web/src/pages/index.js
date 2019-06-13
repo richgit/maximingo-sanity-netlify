@@ -51,6 +51,7 @@ export const query = graphql`
             }
           }
           title
+          source
           description
           articleUrl
           publishedAt
@@ -135,11 +136,12 @@ const IndexPage = props => {
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords}/>
       <Container>
+
         <h1 hidden>{site.title}</h1>
 
+        <div>
+          <div className="jumbotron jumbotron-fluid bg-dark vh-100">
 
-        <div className="jumbotron jumbotron-fluid bg-dark vh-100 align-middle">
-          <div className={styles.headline}>
             <div className={styles.jumbo}>
               <Zoom>
                 <img className="py-4"

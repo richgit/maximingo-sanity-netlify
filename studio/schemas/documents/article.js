@@ -11,6 +11,12 @@ export default {
       type: 'string'
     },
     {
+      name: 'source',
+      title: 'Source',
+      type: 'string',
+      validation: Rule => Rule.error('You have to enter a Source').required(),
+    },
+    {
       title: 'Article URL',
       name: 'articleUrl',
       type: 'url',

@@ -51,11 +51,13 @@ function ArticlePreview(props) {
           <div className="col-sm-8">
             <div className="card-block">
 
+              <p className="card-subtitle">
+                - {props.source} -
+              </p>
               <h4 className="card-title">
                 <div className={cn(responsiveTitle4, styles.title)}>{props.title}</div>
               </h4>
               <p className="card-text">{props.description}</p>
-
             </div>
           </div>
 
