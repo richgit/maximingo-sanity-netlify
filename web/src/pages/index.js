@@ -8,6 +8,7 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import {responsiveTitle3} from "../components/typography.module.css";
 import styles from "../components/article-preview-grid.module.css";
+import Zoom from 'react-reveal/Zoom';
 
 export const query = graphql`
   query IndexPageQuery {
@@ -136,54 +137,61 @@ const IndexPage = props => {
       <Container>
         <h1 hidden>{site.title}</h1>
 
-        <div className="jumbotron jumbotron-fluid bg-dark">
-          <div className="container">
-            <img className="py-4"
-              src={site.homeImage.asset.url}
-              alt={site.title}
-              width="100%"
-            />
-            <div className={cn(responsiveTitle3, styles.description)}>{site.description}</div>
+
+        <div className="jumbotron jumbotron-fluid bg-dark vh-100 align-middle">
+          <div className={styles.headline}>
+            <div className={styles.jumbo}>
+              <Zoom>
+                <img className="py-4"
+                     src={site.homeImage.asset.url}
+                     alt={site.title}
+                     width="100%"
+                />
+                <div className={cn(responsiveTitle3, styles.description)}>{site.description}</div>
+              </Zoom>
+            </div>
           </div>
         </div>
         <div id='articles' className='d-flex justify-content-end'>
-            {articleNodes && (
-              <ArticlePreviewGrid
-                title=' '
-                nodes={articleNodes}
-              />
-            )}
+          {articleNodes && (
+            <ArticlePreviewGrid
+              title=' '
+              nodes={articleNodes}
+            />
+          )}
         </div>
 
-        <div id='contact' className="container">
+        <Zoom left>
+          <div id='contact' className="container">
 
-          <h3 className={styles.headline}>Contact us</h3><br/>
+            <h3 className={styles.headline}>Contact us</h3><br/>
 
-          <div className="row">
-            <div className="col-md-8">
-              <form name="contact" method="POST" data-netlify="true">
-                <input className="form-control" name="name" placeholder="Name..." aria-label="Name" /><br/>
-                <input className="form-control" name="phone" placeholder="Phone..." aria-label="Phone" /><br/>
-                <input required type="email" className="form-control" name="email" placeholder="E-mail..." aria-label="Email" aria-required="true" /><br/>
-                <textarea className="form-control" name="text" placeholder="How can we help you?" aria-label="How can we help?" /><br/>
-                <input className="btn btn-secondary" type="submit" value="Send" aria-label="Send"/><br/><br/>
-              </form>
+            <div className="row">
+              <div className="col-md-8">
+                <form name="contact" method="POST" data-netlify="true">
+                  <input className="form-control" name="name" placeholder="Name..." aria-label="Name"/><br/>
+                  <input className="form-control" name="phone" placeholder="Phone..." aria-label="Phone"/><br/>
+                  <input required type="email" className="form-control" name="email" placeholder="E-mail..."
+                         aria-label="Email" aria-required="true"/><br/>
+                  <textarea className="form-control" name="text" placeholder="How can we help you?"
+                            aria-label="How can we help?"/><br/>
+                  <input className="btn btn-secondary" type="submit" value="Send" aria-label="Send"/><br/><br/>
+                </form>
+              </div>
+              <div className="col-md-4">
+                Maximingo Limited <br/>
+                94 Tender Road<br/>
+                Dairy Flat<br/>
+                Auckland<br/>
+                Phone: +64 (0)22 608 6513<br/>
+                E-mail: <a href="mailto:info@maximingo.com" rel="noopener">info@maximingo.com</a><br/>
+
+
+              </div>
             </div>
-            <div className="col-md-4">
-              Maximingo Limited <br/>
-              94 Tender Road<br/>
-              Dairy Flat<br/>
-              Auckland<br/>
-              Phone: +64 (0)22 608 6513<br/>
-              E-mail: <a href="mailto:info@maximingo.com" rel="noopener">info@maximingo.com</a><br/>
 
-
-            </div>
           </div>
-
-        </div>
-
-
+        </Zoom>
 
       </Container>
     </Layout>
