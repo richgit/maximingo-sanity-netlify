@@ -143,14 +143,14 @@ const IndexPage = props => {
           <div className="jumbotron jumbotron-fluid bg-dark vh-100">
 
             <div className={styles.jumbo}>
-              <Zoom>
+              {/*<Zoom>*/}
                 <img className="py-4"
                      src={site.homeImage.asset.url}
                      alt={site.title}
                      width="100%"
                 />
                 <div className={cn(responsiveTitle3, styles.description)}>{site.description}</div>
-              </Zoom>
+              {/*</Zoom>*/}
             </div>
           </div>
         </div>
