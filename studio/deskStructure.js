@@ -18,6 +18,14 @@ export default () =>
         )
         .icon(MdSettings),
       S.listItem()
+        .title('Quotes')
+        .schemaType('quote')
+        .child(S.documentTypeList('quote').title('Quotes')),
+      S.listItem()
+        .title('Promos')
+        .schemaType('promo')
+        .child(S.documentTypeList('promo').title('Promos')),
+      S.listItem()
         .title('Articles')
         .schemaType('article')
         .child(S.documentTypeList('article').title('Articles')),

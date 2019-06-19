@@ -22,11 +22,11 @@ export default {
       description: 'description',
       source: 'source'
     },
-    prepare() {
+    prepare(selection) {
+      const {source, description} = selection
       return {
-        description,
-        source,
-        subtitle: publishedAt ? dateSegment : 'Missing publishing date'
+        title: source ,
+        subtitle: description.substring(0, 25) + '...'
       }
     }
   }

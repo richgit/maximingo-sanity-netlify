@@ -6,7 +6,7 @@ import styles from "../components/article-preview-grid.module.css";
 import {useSpring, animated} from 'react-spring'
 
 function JumboBlock({image, title, description}) {
-  const props = useSpring({opacity: 1, from: {opacity: 0}, delay: 300, config: { duration: 1000 }})
+  const props = useSpring({opacity: 1, from: {opacity: 0}, delay: 400, config: { duration: 1500 }})
   return (
     <animated.div style={props}>
       <img className="py-4"

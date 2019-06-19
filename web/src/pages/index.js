@@ -9,7 +9,7 @@ import Layout from '../containers/layout'
 import styles from "../components/article-preview-grid.module.css";
 import Zoom from 'react-reveal/Zoom';
 import JumboBlock from "../components/jumbo-block";
-import {Flip} from "react-reveal";
+import {Bounce, Flip} from "react-reveal";
 import {responsiveTitle3} from "../components/typography.module.css";
 
 export const query = graphql`
@@ -169,7 +169,7 @@ const IndexPage = props => {
             <div className={styles.root}>
               {quoteNodes &&
               quoteNodes.map(node => (
-                <Flip left key={node.id}>
+                <Zoom left key={node.id}>
                   <blockquote className={styles.quoteCard}>
                     <p className={responsiveTitle3}>
                       {node.description}
@@ -179,7 +179,7 @@ const IndexPage = props => {
                       - {node.source}
                     </cite>
                   </blockquote>
-                </Flip>
+                </Zoom>
               ))}
             </div>
           )}
@@ -193,7 +193,7 @@ const IndexPage = props => {
         {/*    />*/}
         {/*  )}*/}
         {/*</div>*/}
-        <Zoom left>
+        <Bounce right>
           <div id='contact' className="container">
 
             <h3 className={styles.headline}>Contact us</h3><br/>
@@ -223,7 +223,7 @@ const IndexPage = props => {
             </div>
 
           </div>
-        </Zoom>
+        </Bounce>
 
       </Container>
     </Layout>
