@@ -9,6 +9,8 @@ import Layout from '../containers/layout'
 import styles from "../components/article-preview-grid.module.css";
 import Zoom from 'react-reveal/Zoom';
 import JumboBlock from "../components/jumbo-block";
+import {Flip} from "react-reveal";
+import {responsiveTitle3} from "../components/typography.module.css";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -19,6 +21,15 @@ export const query = graphql`
       homeImage {
         asset {
           url
+        }
+      }
+    }
+    quotes: allSanityQuote {
+      edges {
+        node {
+          id
+          source
+          description
         }
       }
     }
@@ -125,6 +136,9 @@ const IndexPage = props => {
       .filter(filterOutDocsPublishedInTheFuture)
     : []
 
+  const quoteNodes = (data || {}).quotes
+    ? mapEdgesToNodes(data.quotes)
+    : []
 
   if (!site) {
     throw new Error(
@@ -144,20 +158,41 @@ const IndexPage = props => {
 
             <div className={styles.jumbo}>
 
-             <JumboBlock image={site.homeImage} title={site.title} description={site.description}/>
+              <JumboBlock image={site.homeImage} title={site.title} description={site.description}/>
 
             </div>
           </div>
         </div>
-        <div id='articles' className='d-flex justify-content-end'>
-          {articleNodes && (
-            <ArticlePreviewGrid
-              title=' '
-              nodes={articleNodes}
-            />
+
+        <div id='quotes' className='d-flex justify-content-end'>
+          {quoteNodes && (
+            <div className={styles.root}>
+              {quoteNodes &&
+              quoteNodes.map(node => (
+                <Flip left key={node.id}>
+                  <blockquote className={styles.quoteCard}>
+                    <p className={responsiveTitle3}>
+                      {node.description}
+                    </p>
+
+                    <cite>
+                      - {node.source}
+                    </cite>
+                  </blockquote>
+                </Flip>
+              ))}
+            </div>
           )}
         </div>
 
+        {/*<div id='articles' className='d-flex justify-content-end'>*/}
+        {/*  {articleNodes && (*/}
+        {/*    <ArticlePreviewGrid*/}
+        {/*      title=' '*/}
+        {/*      nodes={articleNodes}*/}
+        {/*    />*/}
+        {/*  )}*/}
+        {/*</div>*/}
         <Zoom left>
           <div id='contact' className="container">
 

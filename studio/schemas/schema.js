@@ -9,6 +9,7 @@ import category from './documents/category'
 import person from './documents/person'
 import project from './documents/project'
 import article from './documents/article'
+import quote from './documents/quote'
 import siteSettings from './documents/siteSettings'
 
 // Object types
@@ -38,6 +39,7 @@ export default createSchema({
     person,
     project,
     article,
+    quote,
     siteSettings
   ])
 })
