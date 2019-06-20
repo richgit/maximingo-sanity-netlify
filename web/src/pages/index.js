@@ -3,13 +3,12 @@ import {graphql} from 'gatsby'
 import {filterOutDocsPublishedInTheFuture, filterOutDocsWithoutSlugs, mapEdgesToNodes} from '../lib/helpers'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
-import ArticlePreviewGrid from '../components/article-preview-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import styles from "../components/article-preview-grid.module.css";
 import Zoom from 'react-reveal/Zoom';
 import JumboBlock from "../components/jumbo-block";
-import {Bounce, Flip} from "react-reveal";
+import {LightSpeed} from "react-reveal";
 import {responsiveTitle3} from "../components/typography.module.css";
 
 export const query = graphql`
@@ -193,8 +192,8 @@ const IndexPage = props => {
         {/*    />*/}
         {/*  )}*/}
         {/*</div>*/}
-        <Bounce right>
-          <div id='contact' className="container">
+        <LightSpeed bottom>
+        <div id='contact' className="container">
 
             <h3 className={styles.headline}>Contact us</h3><br/>
 
@@ -223,7 +222,7 @@ const IndexPage = props => {
             </div>
 
           </div>
-        </Bounce>
+        </LightSpeed>
 
       </Container>
     </Layout>
