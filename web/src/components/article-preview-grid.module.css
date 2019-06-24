@@ -44,69 +44,90 @@
   display: flex;
   flex-direction: column;
 }
-  /*display: grid;*/
-  /*grid-template-columns: 1fr;*/
-  /*grid-gap: 2em;*/
 
-  /*@media (--media-min-small) {*/
-  /*  grid-template-columns: 1fr 1fr;*/
-  /*}*/
-  /**/
-  /*@media (--media-min-medium) {*/
-  /*  grid-template-columns: 1fr 1fr 1fr;*/
-  /*}*/
+/*display: grid;*/
+/*grid-template-columns: 1fr;*/
+/*grid-gap: 2em;*/
 
-  .quoteCard {
-    /*background: #fff;*/
-    /*color: #222222;*/
-    padding: 20px 20px 50px 50px;
-    box-sizing: border-box;
-    box-shadow: 0 2px 4px rgba(34, 34, 34, 0.12);
-    position: relative;
-    overflow: hidden;
-    min-height: 120px;
-  }
-  .quoteCard p {
-    /*font-size: 22px;*/
-    line-height: 1.5;
-    margin: 0;
-    /*max-width: 80%;*/
-  }
-  .quoteCard-cite {
-    font-size: 16px;
-    margin-top: 10px;
-    display: block;
-    font-weight: 200;
-    opacity: 0.8;
-  }
-  .quoteCard:before {
-    font-family: Georgia, serif;
-    content: "“";
-    position: absolute;
-    top: 0px;
-    left: 10px;
-    font-size: 5em;
-    color: rgba(238, 238, 238, 0.8);
-    font-weight: normal;
-  }
+/*@media (--media-min-small) {*/
+/*  grid-template-columns: 1fr 1fr;*/
+/*}*/
+/**/
+/*@media (--media-min-medium) {*/
+/*  grid-template-columns: 1fr 1fr 1fr;*/
+/*}*/
+
+.quoteCard {
+  /*background: #fff;*/
+  /*color: #222222;*/
+  padding: 20px 20px 50px 50px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(34, 34, 34, 0.12);
+  position: relative;
+  overflow: hidden;
+  min-height: 120px;
+}
+
+.quoteCard p {
+  /*font-size: 22px;*/
+  line-height: 1.5;
+  margin: 0;
+  /*max-width: 80%;*/
+}
+
+.quoteCard-cite {
+  font-size: 16px;
+  margin-top: 10px;
+  display: block;
+  font-weight: 200;
+  opacity: 0.8;
+}
+
+.quoteCard:before {
+  font-family: Georgia, serif;
+  content: "“";
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  font-size: 5em;
+  color: rgba(238, 238, 238, 0.8);
+  font-weight: normal;
+}
+
+.quoteCard:after {
+  font-family: Georgia, serif;
+  content: "”";
+  position: absolute;
+  /*bottom: px;*/
+  line-height: 100px;
+  right: 0px;
+  font-size: 10em;
+  color: rgba(238, 238, 238, 0.8);
+  font-weight: normal;
+}
+
+@media (max-width: 640px) {
   .quoteCard:after {
-    font-family: Georgia, serif;
-    content: "”";
-    position: absolute;
-    /*bottom: px;*/
-    line-height: 100px;
-    right: 0px;
     font-size: 10em;
-    color: rgba(238, 238, 238, 0.8);
-    font-weight: normal;
+    right: 0px;
   }
-  @media (max-width: 640px) {
-    .quoteCard:after {
-      font-size: 10em;
-      right: 0px;
-    }
-  }
+}
 
+.logo {
+  width: 140px;
+  padding: 10px;
+}
 
+.logo img{
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  opacity:1;
+}
+
+.logo img:hover{
+  opacity:0.6;
+}
 
 

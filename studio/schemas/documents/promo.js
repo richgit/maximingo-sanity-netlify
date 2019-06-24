@@ -17,11 +17,6 @@ export default {
       validation: Rule => Rule.error('You have to enter a URL.').required(),
     },
     {
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'date'
-    },
-    {
       name: 'image',
       title: 'Image',
       type: 'image',
@@ -29,16 +24,10 @@ export default {
         hotspot: true
       },
     },
-    {
-      name: 'description',
-      title: 'Decription',
-      type: 'text'
-    },
   ],
   preview: {
     select: {
       title: 'title',
-      publishedAt: 'publishedAt',
       media: 'image'
     },
     prepare({title = 'No title', publishedAt, media}) {

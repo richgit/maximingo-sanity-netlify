@@ -9,6 +9,7 @@ import styles from "../components/article-preview-grid.module.css";
 import Zoom from 'react-reveal/Zoom';
 import JumboBlock from "../components/jumbo-block";
 import {LightSpeed} from "react-reveal";
+import Pulse from 'react-reveal/Pulse';
 import {responsiveTitle3} from "../components/typography.module.css";
 
 export const query = graphql`
@@ -29,6 +30,19 @@ export const query = graphql`
           id
           source
           description
+        }
+      }
+    }
+    promos: allSanityPromo {
+      edges {
+        node {
+          title
+          url
+          image {
+            asset {
+              url
+            }
+          }
         }
       }
     }
@@ -139,6 +153,10 @@ const IndexPage = props => {
     ? mapEdgesToNodes(data.quotes)
     : []
 
+  const promoNodes = (data || {}).promos
+    ? mapEdgesToNodes(data.promos)
+    : []
+
   if (!site) {
     throw new Error(
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
@@ -184,6 +202,25 @@ const IndexPage = props => {
           )}
         </div>
 
+        <Pulse>
+          {promoNodes && (
+            <div id='promos' className='logos-list w-240 d-flex flex-wrap justify-content-around align-items-center'>
+              {promoNodes &&
+              promoNodes.map(node => (
+                <div className={styles.logo}>
+                  <a href={node.url} target="_blank" className="btn">
+                    <img
+                      src={node.image.asset.url}
+                      alt={node.title}
+                      width="100%"
+                    />
+                  </a>
+                </div>))}
+            </div>
+          )}
+        </Pulse>
+
+
         {/*<div id='articles' className='d-flex justify-content-end'>*/}
         {/*  {articleNodes && (*/}
         {/*    <ArticlePreviewGrid*/}
@@ -193,7 +230,7 @@ const IndexPage = props => {
         {/*  )}*/}
         {/*</div>*/}
         <LightSpeed bottom>
-        <div id='contact' className="container">
+          <div id='contact' className="container">
 
             <h3 className={styles.headline}>Contact us</h3><br/>
 
@@ -216,8 +253,6 @@ const IndexPage = props => {
                 Auckland<br/>
                 Phone: +64 (0)22 608 6513<br/>
                 E-mail: <a href="mailto:info@maximingo.com" rel="noopener">info@maximingo.com</a><br/>
-
-
               </div>
             </div>
 
