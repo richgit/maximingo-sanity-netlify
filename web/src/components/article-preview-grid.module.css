@@ -130,4 +130,25 @@
   opacity:0.6;
 }
 
+.logo:hover .middle {
+  opacity: 1;
+}
+.middleText {
+  /*background-color: #C8C9CA;*/
+  color: white;
+  font-size: 16px;
+  padding: 5px;
 
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0.2;
+  position: relative;
+  left: 50%;
+  top: 0%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  /*margin-top: -50px*/
+}

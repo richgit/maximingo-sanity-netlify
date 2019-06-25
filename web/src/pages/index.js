@@ -208,14 +208,19 @@ const IndexPage = props => {
               {promoNodes &&
               promoNodes.map(node => (
                 <div className={styles.logo}>
+                  <div className={styles.middle}>
+                    <div className={styles.middleText}>{node.title}</div>
+                  </div>
                   <a href={node.url} target="_blank" className="btn">
+
                     <img
                       src={node.image.asset.url}
                       alt={node.title}
                       width="100%"
                     />
                   </a>
-                </div>))}
+                </div>
+              ))}
             </div>
           )}
         </Pulse>
