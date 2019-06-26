@@ -132,19 +132,22 @@
 .logo:hover .middle {
   opacity: 1;
 }
-.middleText {
-  color: white;
-  font-size: 16px;
-
-}
 
 .middle {
+  color: white;
+  z-index: 5;
+  position: absolute;
+  overflow: hidden;
+  left: 50px;
+  top: 30px;
+  padding: 9px;
   transition: .5s ease;
   opacity: 0;
   position: relative;
-  left: 50%;
-  top: 0%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  text-align: center;
+}
+
+.imageContainer {
+  position: relative;
 }
