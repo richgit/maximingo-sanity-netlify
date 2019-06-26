@@ -11,6 +11,7 @@ import JumboBlock from "../components/jumbo-block";
 import {LightSpeed} from "react-reveal";
 import Pulse from 'react-reveal/Pulse';
 import {responsiveTitle3} from "../components/typography.module.css";
+import ImageContentHover from 'react-image-hover';
 
 export const query = graphql`
   query IndexPageQuery {
@@ -208,16 +209,17 @@ const IndexPage = props => {
               {promoNodes &&
               promoNodes.map(node => (
                 <div className={styles.logo}>
-                  <div className={styles.middle}>
-                    <div className={styles.middleText}>{node.title}</div>
-                  </div>
-                  <a href={node.url} target="_blank" className="btn">
-
-                    <img
-                      src={node.image.asset.url}
-                      alt={node.title}
-                      width="100%"
-                    />
+                  <a href={node.url} className="btn">
+                    <ImageContentHover
+                      className={styles.middleText}
+                      tileWidth="130px"
+                      tileHeight="130px"
+                      image={node.image.asset.url}
+                      content={{
+                        title: 'ppp',
+                        body: ''
+                      }}
+                      effect="fadeIn" />
                   </a>
                 </div>
               ))}
