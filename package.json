@@ -15,11 +15,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@sanity/cli": "^0.140.33",
-    "lerna": "^3.13.1"
+    "@sanity/cli": "^0.140.36",
+    "lerna": "^3.15.0"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "react-scroll": "^1.7.11"
+    "react-scroll": "^1.7.12"
   }
 }
