@@ -208,7 +208,7 @@ const IndexPage = props => {
               {promoNodes &&
               promoNodes.map(node => (
                 <div className={styles.logo}>
-                  <a href={node.url} target="_blank" className="btn">
+                  <a href={node.url} target="_blank" className="btn" rel="noopener">
 
                     <h5 className={styles.middle}>
                       {node.title}
